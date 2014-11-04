@@ -1,0 +1,35 @@
+{
+  "name": "fargo",
+  "version": "0.0.1",
+  "authors": [
+    "Bez Hermoso <bezalelhermoso@gmail.com>"
+  ],
+  "description": "Track your Fargo scores online!",
+  "main": "index.html",
+  "moduleType": [
+    "globals"
+  ],
+  "keywords": [
+    "fargo",
+    "pool",
+    "billiards"
+  ],
+  "license": "MIT",
+  "homepage": "http://bezhermoso.github.io/fargo",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angularjs": "~1.3.1",
+    "foundation": "~5.4.7",
+    "jquery": "~2.1.1",
+    "angular-ui-router": "~0.2.11",
+    "ngstorage": "~0.3.0",
+    "momentjs": "~2.8.3"
+  }
+}

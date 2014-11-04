@@ -1,0 +1,28 @@
+<div ng-hide="game.started">
+    <h3>Players</h3>
+    <ul>
+        <li ng-repeat="player in game.players track by player.id">{{ player.name }} <a href="javascript:void(0);" ng-click="remove_player(player.id)">x</a></li>
+        <li><input type="text" name="name" ng-model="player_name"/> <button ng-click="add_player()">Add</button></li>
+    </ul>
+    <input type="number" ng-model="innings" placeholder="Number of innings per player."/>
+    <button ng-click="start()">Start Game!</button>
+</div>
+<div ng-show="game.started">
+    <table>
+        <tr ng-repeat="rack in game.racks">
+            <td>
+                {{ rack.player.name }}
+            </td>
+            <td>
+                {{ rack.score }}
+            </td>
+        </tr>
+    </table>
+    <div ng-hide="game.complete">
+        <h4>{{ game.rack.player.name }}</h4>
+        <em>{{ game.rack.score }}</em>
+        <button ng-click="pot()" ng-hide="game.rack.complete">Pot</button>
+        <button ng-click="start_rotation()" ng-disabled="game.rack.rotation_mode">Start rotation mode</button>
+        <button ng-click="end_rack()">End rack</button>
+    </div>
+</div>

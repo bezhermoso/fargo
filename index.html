@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html ng-app="fargoApp">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Fargo</title>
+</head>
+<body>
+<div ui-view></div>
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<script src="bower_components/momentjs/moment.js"></script>
+<script src="bower_components/angularjs/angular.js"></script>
+<script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+<script src="bower_components/ngstorage/ngStorage.min.js"></script>
+<script src="js/fargo.js"></script>
+<script>
+</script>
+<script>
+    var app = angular.module('fargoApp', ['ui.router', 'fargo']);
+    app.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider) {
+        $stateProvider
+            .state('home', {
+                url: '/',
+                templateUrl: 'partials/home.html',
+                controller: 'HomeController'
+            })
+            .state('game', {
+                url: '/game/{id}',
+                templateUrl: 'partials/game.html',
+                controller: 'GameController'
+            });
+    }]);
+</script>
+<script src="js/controllers/home.js"></script>
+<script src="js/controllers/game.js"></script>
+<script src="js/controllers/rack.js"></script>
+<script src="js/controllers/scoreboard.js"></script>
+</body>
+</html>
